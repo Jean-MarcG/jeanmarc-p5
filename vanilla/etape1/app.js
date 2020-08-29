@@ -30,3 +30,27 @@ const generateBtn = document.querySelector('#generate')
 generateBtn.addEventListener('click', function(e){
     generate()
 })
+
+// choix à partir du bouton radio
+function getType() {
+    let citationType = document.querySelector("input[name = categorie]:checked").value;
+    return citationType;
+}
+
+// choix du nombre de citation à partir du bouton radio
+function getCitationNumber() {
+    let nbCitation = document.querySelector("input[name = nbCitations]:checked").value;
+    return nbCitation;
+}
+
+// Fonction pour génerer une citation
+function generer() {
+    let nombreCitation = getCitationNumber();
+    let citationType = getType();
+    document.getElementById("genreCitation").innerHTML = "--- Citation de " + citationType;
+    document.getElementById("playCitation").innerHTML = "";
+    for (let i = 0; i < nombreCitation; i++) {
+        document.getElementById("playCitation").innerHTML += "<li>" + "<blockquote>" + generate(generator[citationType]);
+    }
+}
+
