@@ -1,4 +1,4 @@
 // vue.config.js
 module.exports = {
-    publicPath: '/jeanmarc-p5/vuejs/generator/dist'
-  }
+    publicPath: process.env.NODE_ENV === 'production' ? '/jeanmarc-p5/vuejs/generator/dist' : '/'
+}
