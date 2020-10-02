@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import uniqid from 'uniqid';
 import './App.css';
-import {getRandomPart} from "./utils";
+import {getRandomPart} from "../../utils";
 
 const generators = {
     generator1: {
@@ -84,7 +84,7 @@ const App = () => {
                     </select>
                 </div>
 
-                <button type="submit">Générer</button>
+                <button className="generate" type="submit">Générer</button>
 
 
             </form>

@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.generate {
+  background: white;
+  border: 1px solid gray;
+  min-height: 38px;
+  min-width: 100px;
+}
