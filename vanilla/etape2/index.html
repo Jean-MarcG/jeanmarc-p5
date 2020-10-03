@@ -3,60 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>Générateur de citation - Etape 1 (VanillaJS)</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.css">
 </head>
 <body>
-
-<h1>Citations</h1>
-<ul id="citations">
-
-</ul>
-
-
-<form name="form">
-    <div class="row">
-        <div class="col-lg-6 col-md-12" style="text-align: center; margin-bottom: 5px;">
-            <div class="radio">
-                <input type="radio" name="categorie" value="generator1" id="type1">
-                <label for="type1">type1</label>
-            </div>
-            <div class="radio">
-                <input type="radio" name="categorie" value="generator2" id="type2">
-                <label for="type2">type2</label>
-            </div>
+<div class="main-container">
+    <!-- Title and citations container -->
+    <div class="container">
+        <div class="generator-content__title-container d-flex">
+            <h1>Générateur de citations</h1>
         </div>
+            <ul id="citations">
+            </ul>
+
     </div>
-    <br>
-    <div class="row">
-        <div class="col-lg-4 col-md-12" style="text-align: center; margin-bottom: 5px;">
-            <div class="radio">
-                <input type="radio" name="nbCitations" value="1" id="1">
-                <label for="1">Un</label>
-            </div>
-            <div class="radio">
-                <input type="radio" name="nbCitations" value="2" id="2">
-                <label for="2">Deux</label>
-            </div>
-            <div class="radio">
-                <input type="radio" name="nbCitations" value="3" id="3">
-                <label for="3">Trois</label>
-            </div>
-            <div class="radio">
-                <input type="radio" name="nbCitations" value="4" id="4">
-                <label for="4">Quatre</label>
-            </div>
-            <div class="radio">
-                <input type="radio" name="nbCitations" value="5" id="5">
-                <label for="5">Cinq</label>
-            </div>
-        </div>
 
-        <button id="generate">Générer</button>
-
-        <div class="playCitation" id="playCitation"></div>
-        <div class="genreCitation" id="genreCitation"></div>
+    <div class="container categorie__text-container d-flex">
+        <form name="form">
+            <p class="uppercase">Sélectionner le type de citations :</p>
+            <div class="radio categorie-radio d-flex">
+                <label for="type1">
+                    <input type="radio" name="categorie" value="generator1" id="type1" checked>
+                    <span>Citations de philosophie</span>
+                </label>
+                <label for="type2">
+                    <input type="radio" name="categorie" value="generator2" id="type2" checked>
+                    <span>type2</span>
+                </label>
+            </div>
+        </form>
     </div>
-</form>
 
+    <div class="container nbCitations__text-container d-flex">
+        <form name="form">
+            <p class="uppercase">Sélectionner le nombre de citations :</p>
+            <div class="radio nbCitations-radio d-flex">
+                <label for="1">
+                    <input type="radio" name="nbCitations" value="1" id="1" checked>
+                    <span>Un</span></label>
+                <label for="2">
+                    <input type="radio" name="nbCitations" value="2" id="2" checked>
+                    <span>Deux</span></label>
+                <label for="3">
+                    <input type="radio" name="nbCitations" value="3" id="3" checked>
+                    <span>Trois</span></label>
+                <label for="4">
+                    <input type="radio" name="nbCitations" value="4" id="4" checked>
+                    <span>Quatre</span></label>
+                <label for="5">
+                    <input type="radio" name="nbCitations" value="5" id="5" checked>
+                    <span>Cinq</span></label>
+            </div>
+
+            <button id="generate">Générer</button>
+
+            <div class="playCitation" id="playCitation"></div>
+            <div class="genreCitation" id="genreCitation"></div>
+        </form>
+    </div>
+</div>
+
+<script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
