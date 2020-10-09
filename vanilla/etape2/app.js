@@ -15,7 +15,7 @@ const generator = {
 /**
  * Génération aléatoire d'une portion de phrase
  * @param key La clé dans laquelle je souhaite récupérer ma portion de phrase
- * @param categorie La catégorie de citations sélectionnées
+ * @pram
  * @returns La portions de phrase aléatoire
  */
 function getRandomPart(categorie, key) {
@@ -42,3 +42,41 @@ form.addEventListener('submit', function (e) {
     e.preventDefault();
     generate(e);
 })
+
+/** Animations
+
+ let controller = new ScrollMagic.Controller();
+
+ let scene = new ScrollMagic.Scene({
+
+    triggerElement: 'title-container',
+    reverse: false
+
+
+})
+
+ .setClassToggle('title-container', 'fade-in')
+ .addIndicators({
+        name: 'INDICATIONS',
+        indent: 200,
+        colorStart: '#fb0606'
+    })
+ .addTo(controller);
+
+let scene2 = new ScrollMagic.Scene({
+
+    triggerElement: '.box',
+    reverse: false
+
+
+})
+
+    .setClassToggle('.box', 'fade-in')
+    .addIndicators({
+        name: 'INDICATIONS',
+        indent: 200,
+        colorStart: '#fc0000'
+    })
+    .addTo(controller);
+
+ **/
