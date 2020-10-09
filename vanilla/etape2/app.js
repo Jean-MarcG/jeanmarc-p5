@@ -28,13 +28,20 @@ function getRandomPart(categorie, key) {
  * Affichage de la phrase aléatoire générée
  */
 function generate(event) {
-    const citations = document.querySelector('#citations');
+    //const citations = document.querySelector('#citations');
     const categorie = event.target.categorie.value;
     const nbCitations = parseInt(event.target.nbCitations.value);
-    citations.innerHTML = '';
+    //citations.innerHTML = '';
+    const citations = document.createElement('ul')
     for (let i = 0; i < nbCitations; i++) {
         citations.innerHTML += `<li>${getRandomPart(categorie, 'part1')} ${getRandomPart(categorie, 'part2')} ${getRandomPart(categorie, 'part3')}.</li>`;
     }
+    Swal.fire({
+        title: 'Vos citations',
+        html: citations,
+        icon: 'success',
+        confirmButtonText: 'Merci'
+    })
 }
 
 const form = document.querySelector('form')
