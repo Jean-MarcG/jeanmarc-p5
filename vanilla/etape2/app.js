@@ -49,7 +49,6 @@ form.addEventListener('submit', function (e) {
     e.preventDefault();
     generate(e);
 })
-
 /** Animations
 
  let controller = new ScrollMagic.Controller();

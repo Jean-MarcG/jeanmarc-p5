@@ -1,0 +1,38 @@
+.navbar {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    color: $white;
+    height: 70px;
+    ul {
+        display: flex;
+        margin-left: 4rem;
+    }
+    a {
+        color: $white;
+        padding: 10px;
+        margin: 0 10px;
+        &:hover {
+            color: $black;
+            border-bottom: 2px #273849 solid;
+            transition: .4s;
+        }
+    }
+    .flex {
+        justify-content: space-between;
+    }
+} 
+
+@media screen and (max-width: 550px) {
+    .navbar {
+        height: 100px;
+        margin: 0 0 0 -1rem;
+    }
+}
+
+.navbar--vue {
+    background: $vue;
+}
+
+.navbar__inner {
+    margin: 1rem auto;
+}

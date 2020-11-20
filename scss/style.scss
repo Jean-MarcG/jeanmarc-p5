@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Roboto&display=swap&family=Noto+Sans+JP:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+@import './_bases/reset';
+@import 
+    './_abstracts/mixins',
+    './_abstracts/variables';
+@import 
+    './_layouts/card',
+    './_layouts/footer',
+    './_layouts/navbar';
+@import 
+    './_components/button',
+    './_components/form'; 
+
+body {
+    height: 100vh;
+    background-color: $white;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: $white;
+    line-height: 2;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $white;
+}
+
+h1 {
+    font-size: 1.1em;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+.showcase {
+    height: 100%;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.framework {
+    position: fixed;
+    bottom: 5rem;
+    right: 1rem;
+    margin-right: 1rem;
+}
+
+.framework p {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 6rem;
+    font-weight: bold;
+    color : $vanilla;
+    -webkit-text-stroke: 2px rgb(17, 17, 17);
+}
+
+.framework p:hover {
+    color: $black;
+    transition: .2s ease-in-out;
+}
+
+@media screen and (min-width: 758px) {
+    .framework {
+        bottom: 3rem;
+        right: 2rem;
+    }
+    .framework p {
+        font-size: 10rem;
+        -webkit-text-stroke: .2rem rgb(17, 17, 17);
+    }
+}
+

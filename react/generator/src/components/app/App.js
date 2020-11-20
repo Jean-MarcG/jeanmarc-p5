@@ -1,7 +1,12 @@
 import React, {useState} from 'react';
 import uniqid from 'uniqid';
-import './App.css';
+import Navbar from '../Navbar/Navbar';
+import '../../../../../scss/style.css'
 import {getRandomPart} from "../../utils";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 const generators = {
     generator1: {
@@ -24,11 +29,42 @@ const Citations = ({ citations }) => {
 
 }
 
+const Header2 = () => {
+    return (
+        <div>
+            <header>
+                <div className="container">
+                    <div className="title-container line">
+                        <h1 className="uppercase">
+                            générateur de citations
+                        </h1>
+                    </div>
+                </div>
+            </header>
+        </div>
+    )
+}
+ 
+const Footer2 = () => {
+    return (
+        <section>
+            <hr />
+            <footer className="footer">
+                <div className="footer-container">
+                    <p>JMG 2020 - Générateur de citations React - </p>
+                </div>
+
+            </footer>
+        </section>
+    )
+}
+
 const App = () => {
 
     const [generator, setGenerator] = useState('generator1');
     const [nbCitations, setNbCitations] = useState(1);
     const [citations, setCitations] = useState([]);
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -42,14 +78,25 @@ const App = () => {
             _citations.push(c)
         }
         setCitations(_citations);
+        
+        const htmlCitation2 = '<ul>' +
+        _citations.map((citation) => '<li>' + citation.value + '</li>') +
+    '</ul>';
+    MySwal.fire({
+        title: <p>Hello World</p>,
+        footer: 'Copyright 2018',
+        html: htmlCitation2
+      }).then(() => {
+        return MySwal.fire(<p>Shorthand works too</p>)
+      })
     }
 
 
     return (
         <div>
-
+            <Navbar />
+            <Header2 />
             <form onSubmit={handleSubmit}>
-
                 <div>
                     <label htmlFor="generator1">Générateur 1</label>
                     <input
@@ -85,13 +132,14 @@ const App = () => {
                 </div>
 
                 <button className="generate" type="submit">Générer</button>
-
-
             </form>
 
             <Citations
                 citations={citations}
             />
+
+            <Footer2 />
+
         </div>
     );
 }

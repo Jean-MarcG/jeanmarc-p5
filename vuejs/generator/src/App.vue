@@ -1,7 +1,8 @@
 <template>
-    <div>
+    <div class="vue-bg">
+      <Navbar></Navbar>
         <Form :generate-citations="generateCitations" />
-        <Citations :citations="citations" />
+      <Footer></Footer>
     </div>
 </template>
 
@@ -9,31 +10,33 @@
 
     import uniqid from 'uniqid';
     import {getRandomPart} from "./services/utils";
-    import Citations from "./components/Citations";
     import Form from "./components/Form";
+    import Navbar  from "./components/Navbar";
+    import Footer from "./components/Footer";
 
     export default {
         name: 'App',
         data() {
             return {
                 generators: {
-                    generator1: {
-                        part1: ["G1part1.1", "G1part1.2", "G1part1.3"],
-                        part2: ["G1part2.1", "G1part2.2", "G1part2.3"],
-                        part3: ["G1part3.1", "G1part3.2", "G1part3.3"],
-                    },
-                    generator2: {
-                        part1: ["G2part1.1", "G2part1.2", "G2part1.3"],
-                        part2: ["G2part2.1", "G2part2.2", "G2part2.3"],
-                        part3: ["G2part3.1", "G2part3.2", "G2part3.3"],
-                    }
+                  generator1: {
+                      part1: ["La seule façon", "La meilleure des façons", "Le meilleur moyen"],
+                      part2: ["pour réussir,", "d'être heureux,", "de vivre,"],
+                      part3: ["c'est d'aimer ce que vous faites", "ne dépend que de vous", "c'est de s'obstiner"],
+                  },
+                  generator2: {
+                      part1: ["Au printemps,", "j’aime bien regarder du haut des remparts au lever du soleil..., ", "c'est pas faux !"],
+                      part2: ["Dans le Languedoc, ils m'appellent Provençal ", "le vocabulaire et les épinards, ", "y’a une belle vue !"],
+                      part3: ["Dans la vie, j'avais deux ennemis : ", "par exemple, Sire, Léodagan et moi on fait semblant de vous prendre en otage \", \"vous pouvez être sûr que le Graal, ", "mais c'est moi qui m'suis gouré en disant mon nom."],
+                  }
                 },
                 citations: []
             }
         },
         components: {
+          Navbar,
             Form,
-            Citations
+          Footer,
         },
         methods: {
             generateCitations(nbCitations, category) {
@@ -44,11 +47,38 @@
                         value: `${getRandomPart(this.generators, category, 'part1')} ${getRandomPart(this.generators, category, 'part2')} ${getRandomPart(this.generators, category, 'part3')}`
                     };
                     this.citations.push(citation);
+                    this.showAlert();
                 }
-            }
-        }
-    }
+            },
+          showAlert() {
+            // Use sweetalert2
+           /* const htmlCitation = `<ul>
+                ${this.citations.map((citation) => `<li>${citation.value}</li>`)}
+            </ul>`*/
+            const htmlCitation2 = '<ul>' +
+                this.citations.map((citation) => '<li>' + citation.value + '</li>') +
+            '</ul>';
+            this.$swal({
+              title: '<strong>HTML <u>example</u></strong>',
+              icon: 'info',
+              html: htmlCitation2,
+              showCloseButton: true,
+              showCancelButton: true,
+              focusConfirm: false,
+              confirmButtonText:
+                  '<i class="fa fa-thumbs-up"></i> Great!',
+              confirmButtonAriaLabel: 'Thumbs up, great!',
+              cancelButtonText:
+                  '<i class="fa fa-thumbs-down"></i>',
+              cancelButtonAriaLabel: 'Thumbs down'
+            });
+          }
+        },
+    };
 </script>
 
-<style>
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Roboto&display=swap&family=Noto+Sans+JP:wght@700&display=swap');
+@import "../../../scss/style.scss";
+
 </style>

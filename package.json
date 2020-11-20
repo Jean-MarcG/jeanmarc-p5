@@ -1,0 +1,29 @@
+{
+  "name": "npm-init-jmg-ocr-p5",
+  "version": "1.0.0",
+  "description": "quote generator package.json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass scss/style.scss",
+    "dev": "sass --watch scss/style.scss scss/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michelre/jeanmarc-p5.git"
+  },
+  "keywords": [
+    "quote",
+    "generator",
+    "package.json"
+  ],
+  "author": "Jean-Marc Gagnebien https://github.com/Jean-MarcG/OCR-P5",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michelre/jeanmarc-p5/issues"
+  },
+  "homepage": "https://github.com/michelre/jeanmarc-p5#readme",
+  "dependencies": {
+    "sass": "^1.28.0"
+  }
+}

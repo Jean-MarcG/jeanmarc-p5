@@ -1,49 +1,50 @@
 <template>
-    <form
-            name="form"
-            @submit="submit"
-    >
-        <div class="row">
-            <div class="col-lg-6 col-md-12 radios" style="text-align: center; margin-bottom: 5px;">
-                <div class="radio">
-                    <input type="radio" name="categorie" value="generator1" id="type1">
-                    <label for="type1">type1</label>
+  <section class="vue-background">
+    <div class="container flex">
+      <form
+          name="form"
+          @submit="submit"
+        >
+        <div class="card">
+          <h2 class="uppercase">Type de citations :</h2>
+                <div class="flex">
+                  <label for="type1">
+                    <input type="radio" name="categorie" value="generator1" id="type1" checked>
+                    <span>Citations de philosophie</span>
+                  </label>
+                  <label for="type2">
+                    <input type="radio" name="categorie" value="generator2" id="type2" checked>
+                    <span>Citations classique</span>
+                  </label>
                 </div>
-                <div class="radio">
-                    <input type="radio" name="categorie" value="generator2" id="type2">
-                    <label for="type2">type2</label>
-                </div>
+          <h2 class="uppercase">Nombre de citations :</h2>
+            <div class="flex">
+              <label for="1">
+                <input type="radio" name="nbCitations" value="1" id="1" checked>
+                <span>1</span>
+              </label>
+              <label for="2">
+                <input type="radio" name="nbCitations" value="2" id="2" checked>
+                <span>2</span>
+              </label>
+              <label for="3">
+                <input type="radio" name="nbCitations" value="3" id="3" checked>
+                <span>3</span>
+              </label>
+              <label for="4">
+                <input type="radio" name="nbCitations" value="4" id="4" checked>
+                <span>4</span>
+              </label>
+              <label for="5">
+                <input type="radio" name="nbCitations" value="5" id="5" checked>
+                <span>5</span>
+              </label>
             </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-lg-4 col-md-12 radios" style="text-align: center; margin-bottom: 5px;">
-                <div class="radio">
-                    <input type="radio" name="nbCitations" value="1" id="1">
-                    <label for="1">Un</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" name="nbCitations" value="2" id="2">
-                    <label for="2">Deux</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" name="nbCitations" value="3" id="3">
-                    <label for="3">Trois</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" name="nbCitations" value="4" id="4">
-                    <label for="4">Quatre</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" name="nbCitations" value="5" id="5">
-                    <label for="5">Cinq</label>
-                </div>
-            </div>
-
-            <button id="generate">Générer</button>
-
-        </div>
-    </form>
+          </div>
+          <button id="generate">Générer</button>
+      </form>
+    </div>  
+  </section>
 </template>
 
 <script>
@@ -58,13 +59,12 @@
                 const category = e.target.categorie.value;
                 const nbCitations = e.target.nbCitations.value;
                 this.generateCitations(nbCitations, category);
-            }
+            },
         }
-    }
+    };
 </script>
 
-<style scoped>
-    .radios {
-        display: flex;
-    }
+<style scoped lang="scss">
+@import "../../../../scss/style.scss";
+
 </style>
