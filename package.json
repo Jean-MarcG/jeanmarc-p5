@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/michelre/jeanmarc-p5.git"
+    "url": "git+https://github.com/Jean-MarcG/jeanmarc-p5"
   },
   "keywords": [
     "quote",
@@ -20,9 +20,9 @@
   "author": "Jean-Marc Gagnebien https://github.com/Jean-MarcG/OCR-P5",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/michelre/jeanmarc-p5/issues"
+    "url": "https://github.com/Jean-MarcG/jeanmarc-p5/issues"
   },
-  "homepage": "https://github.com/michelre/jeanmarc-p5#readme",
+  "homepage": "https://github.com/Jean-MarcG/jeanmarc-p5/jeanmarc-p5#readme",
   "dependencies": {
     "sass": "^1.28.0"
   }
