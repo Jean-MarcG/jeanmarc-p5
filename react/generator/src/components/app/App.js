@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import uniqid from 'uniqid';
 import Navbar from '../Navbar/Navbar';
-import '../../../../../scss/style.css'
 import {getRandomPart} from "../../utils";
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+import "./App.scss"
 
 const MySwal = withReactContent(Swal)
 

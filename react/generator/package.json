@@ -6,10 +6,13 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "sass-loader": "^10.1.0",
+    "scss_p5": "git+https://github.com/Jean-MarcG/scss_p5.git",
     "sweetalert2": "^10.8.1",
     "sweetalert2-react-content": "^3.2.1",
     "uniqid": "^5.2.0"
